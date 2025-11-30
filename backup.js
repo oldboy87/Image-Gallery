@@ -24,9 +24,6 @@
 
 // ]
 
-// const container = document.querySelector("thumbnail-container");
-// const container = document.getElementById("thumbnail-container");
-
 const imgData = [
   {
     imgClass: "nameTest01", //Do I want a different name for each size?
@@ -106,20 +103,16 @@ function createThumbnails() {
 }
 
 //STEP3: create fullscreen images
-function createFullscreenImages(e) {
+function createFullscreenImages(thumbnail) {
   //this is the event handler
   //logs the HTML element object reference and also the derived class name, which is stored as a variable
 
   //TODO if I want to use IDs for each image size, I can do so here as well
 
-  const clickedImg = e.target;
-  console.log(clickedImg);
-  console.log(imgData);
-  // const clickedImg = a.originalTarget;
+  const clickedImg = thumbnail.originalTarget;
   const attClass = clickedImg.className;
-  console.log(clickedImg.className);
+
   const getImgData = imgData.find(function (item) {
-    console.log(item);
     return item.imgClass === attClass;
   });
 
