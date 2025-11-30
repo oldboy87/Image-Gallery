@@ -112,12 +112,12 @@ function createFullscreenImages(e) {
 
   //TODO if I want to use IDs for each image size, I can do so here as well
 
-  const clickedImg = e.target;
+  const clickedImg = e.srcElement;
   console.log(clickedImg);
   console.log(imgData);
   // const clickedImg = a.originalTarget;
   const attClass = clickedImg.className;
-  console.log(clickedImg.className);
+  console.log(attClass);
   const getImgData = imgData.find(function (item) {
     console.log(item);
     return item.imgClass === attClass;
