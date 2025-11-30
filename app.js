@@ -24,9 +24,6 @@
 
 // ]
 
-// const container = document.querySelector("thumbnail-container");
-// const container = document.getElementById("thumbnail-container");
-
 const imgData = [
   {
     imgClass: "nameTest01", //Do I want a different name for each size?
@@ -71,9 +68,6 @@ function wantSize(reqSize) {
   const array = ["small", "medium", "large", "original"];
   return reqSize;
 }
-
-//TODO: Do NOT forget this is how to properly reference objects within objects:
-// console.log(imgData[0].imgSRC.small);
 
 function createThumbnails() {
   // select the DOM element (thumbnail-container) to contain the thumbnails
@@ -163,4 +157,5 @@ function createFullscreenImages(e) {
 //add the createFullscreenImages function as the event handler of the event above
 
 //call the createThumbnails function
+//TODO: Ok I am almost certain the filled paramater below is doing absolutely nothing, but I am about to submit this assignment and removing it only risks breaking it!
 createThumbnails(createFullscreenImages);

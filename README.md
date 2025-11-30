@@ -25,8 +25,10 @@ For testing purposes I am using three photographs from https://unsplash.com/@fen
 
 Have successfuly used the DOM to add thumbnails on page load and fullscreen images on click to their respective containers. I decided to do this without building a function from addEventListener and instead reading the HTML element reference that is passed to the eventHandler when clicked. In the eventHandler I am able to get reference to the class of the image, look up the array of objects to get a list of src locations for each size and then pick the desired size by the user which is currently determined by a global variable (I'll be implementing a callback function later).
 
-EDIT: Just realised HTML element implementation does NOT work on published github page. Curious to learn why.
-
 At time of writing, unable to figure out why grid centering with place-items breaks flex-shrink so have opted not to use grid (not for centering image containers at least).
 
 Have implemented object-fit: cover for fullscreen images. Currenly width of fullscreen image is 100% which kind of defeats the purpose of using cover instead of fill. I want larger images to maintain their size and just be cut-off by the container borders and implement a way to move the image with user input so the whole image is viewable.
+
+Just realised HTML element implementation does NOT work, but changing it from: e.target to e.srcElement fixed it. Phew!
+
+I think I will have to call it here. Wanted to implement buttons for changing picture size and wanted to do so by using the image's default size parameters alone (not using IDs) but I was struggling with getting this to work with CSS. The problem I have at the moment is changing pickedSize to "small", "medium", "large", "original" does pick the correct file (at least it did unless I broke it somehow) nut it scales the image up so practically its just changing the resolution of the image and not the size. I'm pretty sure if I used IDs I would just change the fullscreen container to predetermined dimensions based on those IDs. I wanted to go for something more dynamic than that but still having some hiccups with CSS.
